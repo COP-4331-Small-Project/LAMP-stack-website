@@ -9,6 +9,7 @@ Note: `<project directory` is the PhpStorm project directory. This is located in
     + For Windows users:
         1. Install [Chocolatey](https://chocolatey.org/install), a Windows packaging manager.
         2. Install PHP (run in admin PowerShell): `choco install php`
+        3. Install MySQL: `choco install mysql`
     + For Mac users:
         1. Install PHP: `curl -s https://php-osx.liip.ch/install.sh | bash -s 7.3`
         2. Install [MySQL](http://dev.mysql.com/downloads/mysql/).
@@ -26,13 +27,13 @@ Note: `<project directory` is the PhpStorm project directory. This is located in
             sudo apt install mysql-server php php-mysql
             ```
            
-All OS's: PhpStorm needs to know what PHP interpreter to use. Make sure it knows which to use:
-1. In PhpStorm, go to File > Settings (Ctrl+Alt+S)
-2. Go to Languages & Frameworks > PHP
-3. Click the ellipses on the right
-4. Click the + icon
-5. Select which binary to use
-6. Restart PhpStorm
+3. All OS's: PhpStorm needs to know what PHP interpreter to use. Make sure it knows which to use:
+    1. In PhpStorm, go to File > Settings (Ctrl+Alt+S)
+    2. Go to Languages & Frameworks > PHP
+    3. Click the ellipses on the right
+    4. Click the + icon
+    5. Select which binary to use
+    6. Restart PhpStorm
         
 All done! You may now access the application from http://localhost:3000
 
