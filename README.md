@@ -15,6 +15,7 @@ Note: `<project directory` is the PhpStorm project directory. This is located in
         2. Install [MySQL](http://dev.mysql.com/downloads/mysql/).
         3. Connect PHP and MySQL together:
             ```shell script
+               sudo su -
                cd /var
                mkdir mysql
                cd mysql
