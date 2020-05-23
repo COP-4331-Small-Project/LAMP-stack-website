@@ -45,6 +45,7 @@ Note: `<project directory` is the PhpStorm project directory. This is located in
 	3. Go to the new tab opened on the right and click on the plus on the top left. Hover over Data Source and click on MySQL.
 	4. We need to change a couple of options in the window that popped up.
 	In the **Host**,**User**,**Password** field place your database credentials for smallproject.
+	At the bottom of the window, click **Download missing driver files link.**
     5. Click okay.
 
         
