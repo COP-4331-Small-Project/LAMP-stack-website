@@ -36,6 +36,18 @@ Note: `<project directory` is the PhpStorm project directory. This is located in
     5. Select which binary to use
     6. Restart PhpStorm
         
+4. Create a new database in PhpStorm.
+	1. Open PhpStorm.
+	2. Go-to
+	```
+	 View -> Tool Windows -> Database
+	```
+	3. Go to the new tab opened on the right and click on the plus on the top left. Hover over Data Source and click on MySQL.
+	4. We need to change a couple of options in the window that popped up.
+	In the **Host**,**User**,**Password** field place your database credentials for smallproject.
+    5. Click okay.
+
+        
 All done! You may now access the application from http://localhost:3000
 
 If you cannot see the application, launch PhpStorm and click the browser icon in the editor.
