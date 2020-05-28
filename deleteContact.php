@@ -6,7 +6,7 @@ $inData = getRequestInfo();
 
 $id = $inData["id"];
 
-$conn = $sql;
+$conn = $mysql;
 if ($conn->connect_error)
 {
     returnWithError( $conn->connect_error );
