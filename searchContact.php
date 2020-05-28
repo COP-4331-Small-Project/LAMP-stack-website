@@ -1,5 +1,5 @@
 <?php
-
+include 'connect_to_db.php';
 session_start();
 
 $inData = getRequestInfo();
@@ -8,7 +8,7 @@ $inData = getRequestInfo();
 $searchResults = "";
 $searchCount = 0;
 
-$conn = new mysqli("92.249.44.207", "u725926379_admin", "a8-2LT2$_,@GNM&T", "u725926379_contactdb");
+$conn = $mysql;
 if ($conn->connect_error)
 {
     returnWithError( $conn->connect_error );
