@@ -1,5 +1,5 @@
 <?php
-
+include 'connect_to_db.php';
 session_start();
 
 $inData = getRequestInfo();
@@ -13,7 +13,7 @@ $phoneNumber = $inData["phoneNumber"];
 $dateCreated = $inData["dateCreated"];
 
 
-$conn = new mysqli("92.249.44.207", "u725926379_admin", "a8-2LT2$_,@GNM&T", "u725926379_contactdb");
+$conn = $sql;
 if ($conn->connect_error)
 {
     returnWithError( $conn->connect_error );
