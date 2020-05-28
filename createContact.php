@@ -13,7 +13,7 @@ $phoneNumber = $inData["phoneNumber"];
 $dateCreated = $inData["dateCreated"];
 
 
-$conn = $sql;
+$conn = $mysql;
 if ($conn->connect_error)
 {
     returnWithError( $conn->connect_error );
