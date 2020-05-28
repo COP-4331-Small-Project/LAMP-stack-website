@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 
 include 'connect_to_db.php';
@@ -24,8 +25,12 @@ if (!empty($_POST)) {
         // Set session to valid. Store username and user ID
         $_SESSION['valid'] = true;
         $_SESSION['username'] = $username;
+        $_SESSION['email'] = $row['email'];
         $_SESSION['userId'] = $row["id"];
-        echo "Logged in";
+
+        $userObj['username'] = $row['username'];
+        $userObj['email'] = $row['email'];
+        echo json_encode($userObj);
     } else {
         // Login failed. Determine error case
         if ($username === null || $password === null) {
@@ -39,7 +44,9 @@ if (!empty($_POST)) {
 } else {
     // Otherwise, the user is checking if they are logged in
     if ($_SESSION['valid'] === true) {
-        echo "Logged in";
+        $userObj['username'] = $_SESSION['username'];
+        $userObj['email'] = $_SESSION['email'];
+        echo json_encode($userObj);
     } else {
         http_response_code(401);
         echo 'invalid session';
