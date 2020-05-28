@@ -5,13 +5,20 @@
     <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
     <script src="/lib/jquery-3.5.1.min.js"></script>
     <script src="/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/lib/sha256.min.js"></script>
     <script src="/js/main.js"></script>
     <title>MyHogwarts - Contact Management System</title>
 </head>
 <body class="p-3">
-    <h1>Testing</h1>
-    <p>If you can see this, good job!</p>
-    <p>If the link below looks like a button, bootstrap is working!</p>
-    <a class="btn btn-primary" href="/api/test.php">Test PHP</a>
+    <h1>Login</h1>
+    <form id="loginForm">
+        <div class="form-group">
+            <label for="usernameInput">Username</label>
+            <input type="text" class="form-control" id="usernameInput">
+            <label for="passwordInput">Password</label>
+            <input type="password" class="form-control" id="passwordInput">
+        </div>
+        <button type="submit" class="btn btn-primary">Log In</button>
+    </form>
 </body>
 </html>
