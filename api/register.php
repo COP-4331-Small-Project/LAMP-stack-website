@@ -29,12 +29,12 @@ if (!empty($_POST)) {
         echo 'username already exists';
     } else {
         // Save user
-        if ($mysql->query("INSERT INTO `Users` (username, password, email) VALUES ('$username', '$password', '$email');")) {
+        if ($res = $mysql->query("INSERT INTO `Users` (username, password, email) VALUES ('$username', '$password', '$email');")) {
             // Create session cookie
             session_start();
             $_SESSION['valid'] = true;
             $_SESSION['username'] = $username;
-
+            $_SESSION['userId'] = $res->fetch_assoc()["id"];
             echo 'user created';
         } else {
             http_response_code(500);
