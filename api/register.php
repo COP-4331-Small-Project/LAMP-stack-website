@@ -29,16 +29,24 @@ if (!empty($_POST)) {
         echo 'username already exists';
     } else {
         // Save user
-        if ($mysql->query("INSERT INTO `Users` (username, password, email) VALUES ('$username', '$password', '$email');")) {
+        if ($res = $mysql->query("INSERT INTO `Users` (username, password, email) VALUES ('$username', '$password', '$email');")) {
             // Create session cookie
+            $row = $mysql->query("SELECT * FROM Users WHERE username='$username';")->fetch_assoc();
             session_start();
             $_SESSION['valid'] = true;
             $_SESSION['username'] = $username;
+            $_SESSION['userId'] = $row["id"];
+            $_SESSION['email'] = $row["email"];
 
-            echo 'user created';
+            $userObj['username'] = $_SESSION['username'];
+            $userObj['email'] = $_SESSION['email'];
+            echo json_encode($userObj);
         } else {
             http_response_code(500);
             echo 'unknown error occurred';
         }
     }
+} else {
+    http_response_code(400);
+    echo 'missing fields';
 }
