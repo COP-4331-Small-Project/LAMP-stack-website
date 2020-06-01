@@ -8,17 +8,103 @@
     <script src="/libs/sha256.min.js"></script>
     <script src="/js/main.js"></script>
     <title>MyHogwarts - Contact Management System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@500&family=Lateef&display=swap" rel="stylesheet">
+    <style type = "text/css">
+        #loginheading {
+            color:black;
+            font-family: 'Alegreya Sans SC', sans-serif;
+            text-align: center;
+
+        }
+        body {
+            background-image: url('hogwartsbackground.jpg');
+            background-size: 1920px 1200px;
+            background-repeat: no-repeat;
+
+
+
+
+        }
+        #wholeborder {
+            border-radius: 10px;
+            width: auto;
+            height: auto;
+            padding: 10px;
+            margin-top: -20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .btn{
+            font-family: 'Alegreya Sans SC', sans-serif;
+            padding: inherit;
+            font-size: 18pt;
+            width: 35%;
+            color:ghostwhite;
+            border-color: #247CAE;
+            background-color: #247CAE;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 10px;
+            margin-bottom: 10px;
+
+        }
+        .btn:hover{
+            font-family: 'Alegreya Sans SC', sans-serif;
+            color:ghostwhite;
+            border-color: lightblue;
+            background-color: lightblue;
+            cursor: pointer;
+        }
+
+        #loginForm{
+            box-sizing: border-box;
+        }
+        .form-control{
+            height: 60px;
+        }
+        .form-label {
+            padding-bottom: 0;
+            padding-top:10px;
+            font-size: 12pt;
+            font-family: 'Alegreya Sans SC', sans-serif;
+        }
+        .Or{
+            padding:inherit;
+            font-weight: bold;
+            font-family: 'Alegreya Sans SC', sans-serif;
+            font-size: 20pt;
+        }
+        @media screen and (max-width:600px){
+            loginform{
+                width:100%;
+                margin-top: 0;
+            }
+
+        }
+
+
+
+    </style>
 </head>
 <body class="p-3">
-    <h1>Login</h1>
+    <div id ="wholeborder">
+    <h1 id = 'loginheading'><hr>MyHogwarts<hr></h1>
     <form id="loginForm">
         <div class="form-group">
-            <label for="usernameInput">Username</label>
-            <input type="text" class="form-control" id="usernameInput">
-            <label for="passwordInput">Password</label>
-            <input type="password" class="form-control" id="passwordInput">
+            <label for="usernameInput" class ="form-label">Username</label>
+            <input type="text" class="form-control" id="usernameInput" placeholder="John Doe">
+            <label for="passwordInput" class="form-label">Password</label>
+            <input type="password" class="form-control" id="passwordInput" placeholder="*******">
         </div>
-        <button type="submit" class="btn btn-primary">Log In</button>
+        <a href = "contacts.php" class="btn" id="login" >Login</a>
+        <p align="center" class = "Or">OR</p>
+        <a href = "signup.html" class="btn" id="signup">Sign up</a>
     </form>
+    </div>
 </body>
 </html>
