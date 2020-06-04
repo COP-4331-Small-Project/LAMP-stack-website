@@ -16,8 +16,9 @@ if (!empty($_POST)) {
     // Password is hashed so it can be safely stored
     $password = empty($_POST['password']) ? null : $mysql->real_escape_string(hash('sha256', $_POST['password']));
     $email = empty($_POST['email']) ? null : $mysql->real_escape_string($_POST['email']);
+    $house = empty($_POST['house']) ? null : $mysql->real_escape_string($_POST['house']);
 
-    if ($username === null || $password === null || $email === null) {
+    if ($username === null || $password === null || $email === null || $house === null) {
         http_response_code(400);
         echo 'missing fields';
         exit();
@@ -29,7 +30,7 @@ if (!empty($_POST)) {
         echo 'username already exists';
     } else {
         // Save user
-        if ($res = $mysql->query("INSERT INTO `Users` (username, password, email) VALUES ('$username', '$password', '$email');")) {
+        if ($res = $mysql->query("INSERT INTO `Users` (username, password, email, house) VALUES ('$username', '$password', '$email', '$house');")) {
             // Create session cookie
             $row = $mysql->query("SELECT * FROM Users WHERE username='$username';")->fetch_assoc();
             session_start();
@@ -40,6 +41,7 @@ if (!empty($_POST)) {
 
             $userObj['username'] = $_SESSION['username'];
             $userObj['email'] = $_SESSION['email'];
+            $userObj['house'] = $row["house"];
             echo json_encode($userObj);
         } else {
             http_response_code(500);
