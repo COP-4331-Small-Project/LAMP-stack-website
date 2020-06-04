@@ -15,7 +15,7 @@ $(() => {
             data: JSON.stringify(loginData),
             success: () => {
                 // Forward user to the contacts page
-                window.location = '/contacts.php';
+                window.location = '/contacts.html';
             }
         })
     })
