@@ -17,6 +17,7 @@ $firstName = $mysql->real_escape_string($inData["firstName"]);
 $lastName = $mysql->real_escape_string($inData["lastName"]);
 $email = $mysql->real_escape_string($inData["email"]);
 $phoneNumber = $mysql->real_escape_string($inData["phoneNumber"]);
+$house = $mysql->real_escape_string($inData["house"]);
 
 if (!$firstName || !$lastName || !$email || !$phoneNumber) {
     http_response_code(400);
@@ -24,7 +25,8 @@ if (!$firstName || !$lastName || !$email || !$phoneNumber) {
     exit;
 }
 
-$sql = "insert into Contacts (userId,firstName,lastName,phoneNumber,email) VALUES ('$userId', '$firstName', '$lastName', '$phoneNumber', '$email')";
+$sql = "insert into Contacts (userId,firstName,lastName,phoneNumber,email,house)"
+. "VALUES ('$userId', '$firstName', '$lastName', '$phoneNumber', '$email', '$house')";
 echo "$sql\n";
 if($result = $mysql->query($sql) !== TRUE )
 {
