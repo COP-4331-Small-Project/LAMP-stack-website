@@ -1,0 +1,134 @@
+
+@import url('https://fonts.googleapis.com/css?family=Numans');
+
+html,body{
+    background-image: url('https://www.pixelstalk.net/wp-content/uploads/2016/07/Hogwarts-Castle-HD-Images.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    font-family: 'Numans', sans-serif;
+}
+
+.container{
+    height: 100%;
+    align-content: center;
+}
+
+.card{
+    height: 370px;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 400px;
+    background-color: rgba(0,0,0,0.5) !important;
+}
+.card-signup{
+    height: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 400px;
+    background-color: rgba(0,0,0,0.5) !important;
+}
+
+
+.card-header h3{
+    color: white;
+}
+
+
+.input-group-prepend span{
+    width: 50px;
+    background-color: #FFC312;
+    color: black;
+    border:0 !important;
+}
+
+input:focus{
+    outline: 0 0 0 0  !important;
+    box-shadow: 0 0 0 0 !important;
+
+}
+
+.remember{
+    color: white;
+}
+
+.remember input
+{
+    width: 20px;
+    height: 20px;
+    margin-left: 15px;
+    margin-right: 5px;
+}
+
+.login_btn{
+    color: black;
+    background-color: #FFC312;
+    width: 100px;
+}
+
+.login_btn:hover{
+    color: black;
+    background-color: white;
+}
+
+.signup_btn{
+    color: black;
+    background-color: #FFC312;
+    width: 100px;
+}
+
+.signup_btn:hover{
+    color: black;
+    background-color: white;
+}
+
+
+.links{
+    color: white;
+}
+
+.links a{
+    margin-left: 4px;
+}
+
+#message{
+    display:none;
+    background: #FFFFFF;
+    color: black;
+    position: relative;
+    padding: 15px;
+    margin: 15px 15px 20px 15px;
+    opacity: 0.5;
+}
+
+#message p {
+    padding: 0 15px;
+    font-size: 10pt;
+    font-family: 'Numans', sans-serif;
+}
+#message h3 {
+    padding: 1px 1px;
+    font-size: 16px;
+    font-family: 'Numans', sans-serif;
+}
+
+.valid {
+    color: green;
+}
+
+.valid:before {
+    position: relative;
+    left: -12px;
+    content: "\2713";
+}
+
+/* Add a red text color and an "x" icon when the requirements are wrong */
+.invalid {
+    color: red;
+}
+
+.invalid:before {
+    position: relative;
+    left: -12px;
+    content: "\2717";
+}
