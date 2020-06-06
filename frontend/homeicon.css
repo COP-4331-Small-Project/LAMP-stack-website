@@ -1,0 +1,5 @@
+.menu-image-hover-wrapper img.menu-image-title-hide {
+    width: 20px !important;
+    height: auto;
+    margin-left: -20px !important; /* Fix for hover effect . This needs to be the same size as the width */
+}
