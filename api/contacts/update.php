@@ -26,8 +26,8 @@ if (!$firstName || !$lastName || !$email || !$phoneNumber || !$contactId) {
     exit;
 }
 
-$sql = "UPDATE Contacts SET email='$email', firstName='$firstName', lastName='$lastName', phoneNumber='$phoneNumber, ' "
-        . "house='$house' WHERE userId='$userId' AND contactId='$contactId'";
+$sql = "UPDATE Contacts SET email='$email', firstName='$firstName', lastName='$lastName', phoneNumber='$phoneNumber', "
+        . "house='$house' WHERE userId='$userId' AND id='$contactId'";
 echo "$sql\n";
 if($result = $mysql->query($sql) !== TRUE )
 {
