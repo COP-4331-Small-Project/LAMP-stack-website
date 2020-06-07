@@ -105,7 +105,7 @@ window.onload = function(){
                 contentType: 'application/json',
                 data: JSON.stringify(registerObj),
                 success: () => {
-                    window.location = '/home.php';
+                    window.location = '/home.html';
                 },
                 error: (xhr) => {
                     if (xhr.status === 403) {
