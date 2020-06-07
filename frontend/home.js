@@ -1,6 +1,6 @@
 $(() => {
     $(document).ready(function() {
-        var table = $('#example').DataTable({
+        let table = $('#example').DataTable({
             searchPanes: true
         });
         table.searchPanes.container().prependTo(table.table().container());

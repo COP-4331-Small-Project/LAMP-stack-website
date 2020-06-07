@@ -1,218 +1,113 @@
-<?php
-include_once('api/config.php');?>
+
 
 <!DOCTYPE html>
-<html lang="en" xmlns="">
+<html lang="en" >
 <head>
-    <title>MyHogwarts - Your Contacts</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="libs/jquery/jquery-3.3.1.slim.min.js"></script>
+    <title>MyHogwarts - Your Contacts</title>
+    <!-- NAV BAR-->
     <link rel="stylesheet" href="/libs/bootstrap/css/bootstrap.min.css">
+    <script src="libs/jquery/jquery-3.3.1.slim.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="libs/bootstrap/js/navbar.js"></script>
     <script src="frontend/home.js"></script>
-    <link rel="stylesheet" href="/frontend/homeStyle.css">
-    <script src="libs/jquery/jquery-3.5.1.js"></script>
-    <script src="libs/jquery/jquery.dataTables.min.js"></script>
-    <script src="frontend/dataTables.bootstrap4.min.css"></script>
-    <script src="js/searchPanes.bootstrap4.min.js"></script>
-    <script src="js/dataTables.select.min.js"></script>
-    <script src="js/contacts.js"><</script>
+    <!-- DATA TABLE-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="frontend/homeStyle.css">
+    <style type="text/css">
+        .wrapper{
+            width: 650px;
+            margin: 0 auto;
+        }
+        table tr td:last-child a{
+            margin-right: 15px;
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
 </head>
-
-
-<!-- Navbar-->
 <body class="p-3">
-        <nav class="navbar navbar-expand-lg fixed-top py-3">
-            <div class="container"><a href="#" class="navbar-brand text-uppercase font-weight-bold">Welcome Back</a>
-                <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
+<!-- Navbar-->
+    <nav class="navbar navbar-expand-lg fixed-top py-3">
+        <div class="container">
+            <a href="#" class="navbar-brand text-uppercase font-weight-bold">Welcome</a>
+            <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
 
-                <div id="navbarSupportedContent" class="collapse navbar-collapse">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a href="#" class="nav-link text-uppercase font-weight-bold">Add User</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link text-uppercase font-weight-bold">Edit Contacts</a></li>
-                        <li class="nav-item active"><a href="/api/login.php" class="nav-link text-uppercase font-weight-bold">Logout <span class="sr-only">(current)</span></a></li>
-
-                    </ul>
-                </div>
+            <div id="navbarSupportedContent" class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active"><a href="/api/logout.php" class="nav-link text-uppercase font-weight-bold">Logout <span class="sr-only">(current)</span></a></li>
+                </ul>
             </div>
-        </nav>
-
-        <div class="container py-5">
-            <header class="text-center text-white">
-                <h1 class="display-4">My Hogwarts Contacts</h1>
-            </header>
-            <div class="row py-5">
-                <div class="col-lg-10 mx-auto">
-                    <div class="card rounded shadow border-0">
-                        <div class="card-body p-5 bg-white rounded">
-                            <div class="table-responsive">
-                                <table id="example" style="width:100%" class="table table-striped table-bordered">
-                                    <thead>
-                                    <tr>
-                                        <th>First Name</th>
-                                        <th>Surname</th>
-                                        <th>Email</th>
-                                        <th>Phone Contact</th>
-                                        <th>House</th>
-
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td>Tiger</td>
-                                        <td>Nixon</td>
-                                        <td>Edinburgh</td>
-                                        <td>61</td>
-                                        <td>Gryffindor</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Garrett</td>
-                                        <td>Winters</td>
-                                        <td>Tokyo</td>
-                                        <td>63</td>
-                                        <td>Hufflepuff</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Ashton</td>
-                                        <td>Cox</td>
-                                        <td>San Francisco</td>
-                                        <td>66</td>
-                                        <td>Ravenclaw</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Cedric</td>
-                                        <td>Developer</td>
-                                        <td>Edinburgh</td>
-                                        <td>22</td>
-                                        <td>Hufflepuff</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Airi</td>
-                                        <td>Satou</td>
-                                        <td>Tokyo</td>
-                                        <td>33</td>
-                                        <td>Slytherin</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Brielle</td>
-                                        <td>Williamson</td>
-                                        <td>New York</td>
-                                        <td>61</td>
-                                        <td>Ravenclaw</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Herrod</td>
-                                        <td>Chandler</td>
-                                        <td>San Francisco</td>
-                                        <td>59</td>
-                                        <td>Hufflepuff</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Rhona</td>
-                                        <td>Davidson</td>
-                                        <td>Tokyo</td>
-                                        <td>55</td>
-                                        <td>Hufflepuff</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Colleen</td>
-                                        <td>Hurst</td>
-                                        <td>San Francisco</td>
-                                        <td>39</td>
-                                        <td>Slytherin</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Sonya</td>
-                                        <td>Frost</td>
-                                        <td>Edinburgh</td>
-                                        <td>23</td>
-                                        <td>Slytherin</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Jena</td>
-                                        <td>O'Gaines</td>
-                                        <td>London</td>
-                                        <td>30</td>
-                                        <td>Slytherin</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Quinn/td>
-                                        <td>Flynn<</td>
-                                        <td>Edinburgh</td>
-                                        <td>22</td>
-                                        <td>Gryffindor</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Charde</td>
-                                        <td>Marshall</td>
-                                        <td>San Francisco</td>
-                                        <td>36</td>
-                                        <td>Slytherin</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Haley</td>
-                                        <td>Kennedy</td>
-                                        <td>London</td>
-                                        <td>43</td>
-                                        <td>gryffindor</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Tatyana</td>
-                                        <td>Regi</td>
-                                        <td>London</td>
-                                        <td>19</td>
-                                        <td>2010/03/17</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Michael</td>
-                                        <td>Marke</td>
-                                        <td>London</td>
-                                        <td>66</td>
-                                        <td>Ravenclaw</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Paul</td>
-                                        <td>Byrd</td>
-                                        <td>New York</td>
-                                        <td>64</td>
-                                        <td>Slytherin</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Gloria</td>
-                                        <td>Greer</td>
-                                        <td>New York</td>
-                                        <td>59</td>
-                                        <td>Ravenclaw</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Bradley</td>
-                                        <td>Little</td>
-                                        <td>London</td>
-                                        <td>41</td>
-                                        <td>Gryffindor</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Dai</td>
-                                        <td>Personnel</td>
-                                        <td>Edinburgh</td>
-                                        <td>35</td>
-                                        <td>Slytherin</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Jenette</td>
-                                        <td>Caldwell</td>
-                                        <td>New York</td>
-                                        <td>30</td>
-                                        <td>Slytherin</td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+        </div>
+    </nav>
+        <div class="wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="page-header clearfix">
+                            <h2 style="color:#FAFAFA" class="pull-left">My Contacts</h2>
+                            <a href="create.php" class="btn btn-success pull-right">Add New Contact</a>
                         </div>
+                        <?php
+                        // Include config file
+                        require_once "api/config.php";
+                        // Attempt select query execution
+                        $sql = "SELECT * FROM u725926379_contactdb.Contacts";
+                        if($result = mysqli_query($link, $sql)){
+                            if(mysqli_num_rows($result) > 0){
+                                echo "<table class='table table-striped table-dark'>";
+                                echo "<thead>";
+                                    echo "<tr>";
+                                        echo "<th>#</th>";
+                                        echo "<th>First Name</th>";
+                                        echo "<th>Last Name</th>";
+                                        echo "<th>Phone Number</th>";
+                                        echo "<th>Email</th>";
+                                        echo "<th>House</th>";
+                                        echo "<th>Action</th>";
+                                    echo "</tr>";
+                                echo "</thead>";
+                                echo "<tbody>";
+                                while($row = mysqli_fetch_array($result)){
+                                    echo "<tr>";
+                                    echo "<td>" . $row['id'] . "</td>";
+                                    echo "<td>" . $row['firstName'] . "</td>";
+                                    echo "<td>" . $row['lastName'] . "</td>";
+                                    echo "<td>" . $row['phoneNumber'] . "</td>";
+                                    echo "<td>" . $row['email'] . "</td>";
+                                    echo "<td>" . $row['house'] . "</td>";
+                                    echo "<td>";
+                                    echo "<a href='read.php?id=". $row['id'] ."' title='View Record' data-toggle='tooltip'><span class='glyphicon glyphicon-eye-open'></span></a>";
+                                    echo "<a href='update.php?id=". $row['id'] ."' title='Update Record' data-toggle='tooltip'><span class='glyphicon glyphicon-pencil'></span></a>";
+                                    echo "<a href='delete.php?id=". $row['id'] ."' title='Delete Record' data-toggle='tooltip'><span class='glyphicon glyphicon-trash'></span></a>";
+                                    echo "</td>";
+                                    echo "</tr>";
+                                }
+                                echo "</tbody>";
+                                echo "</table>";
+                                // Free result set
+                                mysqli_free_result($result);
+                            } else{
+                                echo "<p class='lead'><em>No records were found.</em></p>";
+                            }
+                        } else{
+                            echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+                        }
+
+                        // Close connection
+                        mysqli_close($link);
+                        ?>
                     </div>
                 </div>
             </div>
         </div>
+
+</html>
 
 

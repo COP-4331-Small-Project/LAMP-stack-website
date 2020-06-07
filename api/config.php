@@ -1,5 +1,5 @@
 <?php
-session_start();
+//
 define('DB_SERVER', '92.249.44.207');
 define('DB_USERNAME', 'u725926379_admin');
 define('DB_PASSWORD', 'a8-2LT2$_,@GNM&T');
