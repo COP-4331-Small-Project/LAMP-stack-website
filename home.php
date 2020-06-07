@@ -68,8 +68,9 @@ session_start(); ?>
                 <?php
                 // Include config file
                 require_once "api/config.php";
+                $userId = $_SESSION["userId"];
                 // Attempt select query execution
-                $sql = "SELECT * FROM u725926379_contactdb.Contacts";
+                $sql = "SELECT * FROM u725926379_contactdb.Contacts WHERE userId='$userId';";
                 if($result = mysqli_query($link, $sql)){
                     if(mysqli_num_rows($result) > 0){
                         echo "<table class='table table-striped table-dark'>";
