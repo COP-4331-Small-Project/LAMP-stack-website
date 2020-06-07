@@ -20,6 +20,7 @@ $sql = "select * from Contacts where (firstName like '%$search%' OR lastName lik
 . "and userId='$userId';";
 $result = $mysql->query($sql);
 $retJson = json_encode($result->fetch_all(MYSQLI_ASSOC));
+header('Content-Type: application/json');
 echo $retJson;
 
 $mysql->close();

@@ -31,6 +31,7 @@ if (!empty($_POST)) {
         $userObj['username'] = $row['username'];
         $userObj['email'] = $row['email'];
         $userObj['house'] = $row["house"];
+        header('Content-Type: application/json');
         echo json_encode($userObj);
     } else {
         // Login failed. Determine error case
@@ -52,6 +53,7 @@ if (!empty($_POST)) {
         $res = $mysql->query("SELECT * FROM `Users` WHERE username = '$username';");
         $row = $res->fetch_assoc();
         $userObj['house'] = $row["house"];
+        header('Content-Type: application/json');
         echo json_encode($userObj);
     } else {
         http_response_code(401);
