@@ -8,7 +8,7 @@ if (!$_SESSION['valid']) {
     exit;
 }
 
-include '../connect_to_db.php';
+include_once '../connect_to_db.php';
 
 $userId = $_SESSION["userId"];
 $queries = array();

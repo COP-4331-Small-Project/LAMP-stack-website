@@ -19,7 +19,7 @@ if (!empty($_POST)) {
     $password = empty($_POST['password']) ? null : $_POST['password'];
 
     // Grab user's password hash
-    $res = $mysql->query("SELECT * FROM `Users` WHERE username = '$username';");
+    $res = $mysql->query("SELECT * FROM Users WHERE username = '$username';");
     // Check password against db entry
     if (($row = $res->fetch_assoc()) && hash('sha256', $password) === $row['password']) {
         // Set session to valid. Store username and user ID
