@@ -68,7 +68,7 @@ session_start(); ?>
             <div class="col-md-12">
                 <div class="page-header clearfix">
                     <h2 style="color:#FAFAFA" class="pull-left">My Contacts</h2>
-                    <a href="create.php" class="btn btn-success pull-right">Add New Contact</a>
+                    <a href="create.html" class="btn btn-success pull-right">Add New Contact</a>
                 </div>
                 <?php
                 // Include config file
@@ -81,7 +81,6 @@ session_start(); ?>
                         echo "<table class='table table-striped table-dark'>";
                         echo "<thead>";
                         echo "<tr>";
-                        echo "<th>#</th>";
                         echo "<th>First Name</th>";
                         echo "<th>Last Name</th>";
                         echo "<th>Phone Number</th>";
@@ -93,7 +92,6 @@ session_start(); ?>
                         echo "<tbody>";
                         while($row = mysqli_fetch_array($result)){
                             echo "<tr>";
-                            echo "<td>" . $row['id'] . "</td>";
                             echo "<td>" . $row['firstName'] . "</td>";
                             echo "<td>" . $row['lastName'] . "</td>";
                             echo "<td>" . $row['phoneNumber'] . "</td>";
