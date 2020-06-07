@@ -9,8 +9,6 @@ $(() => {
     }
 	$('#createForm').submit(function(e) {
         e.preventDefault();
-        console.log($("#createForm").serializeArray());
-        console.log(objectifyForm($("#createForm").serializeArray()));
         $.ajax({
             url: '/api/contacts/create.php',
             method: 'POST',
