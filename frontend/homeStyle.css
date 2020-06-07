@@ -57,11 +57,14 @@
 
 
 body{
-    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('https://www.pixelstalk.net/wp-content/uploads/2016/07/Hogwarts-Castle-HD-Images.jpg');
-    background-size: cover;
+    background-image: linear-gradient(rgba(0, 0, 25, 0.5), rgba(255, 100, 0, 0.5)),
+    url('https://www.pixelstalk.net/wp-content/uploads/2016/07/Hogwarts-Castle-HD-Images.jpg');
+    background-size: auto;
     background-repeat: no-repeat;
     height: 100%;
     font-family: 'Numans', sans-serif;
 
 
 }
+
+ html{ background-image: linear-gradient(rgba(255, 100, 0, 0.5), rgba(0, 0, 25, 0.5)),url('https://www.pixelstalk.net/wp-content/uploads/2016/07/Hogwarts-Castle-HD-Images.jpg');}
