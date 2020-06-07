@@ -60,11 +60,14 @@ window.onload = function(){
 
 
     }
-    document.getElementById("myButton").onclick = function(){
-        var email = document.getElementById("emailInput").value;
-        var username = document.getElementById("usernameInput").value;
-        var pass = document.getElementById("passwordInput_1").value;
-        var pass_2 = document.getElementById("passwordInput_2").value;
+    $('#registerForm').submit(function(e) {
+        e.preventDefault();
+
+        const email = $("#emailInput").val();
+        const username = $("#usernameInput").val();
+        const pass = $("#passwordInput_1").val();
+        const pass_2 = $("#passwordInput_2").val();
+        const house = $('#houseInput').val();
 
         if(email == ""){
             alert("Please Enter Your Email");
@@ -73,6 +76,9 @@ window.onload = function(){
         else if(username == ""){
             alert("Please Enter Your Desired Username");
             return false;
+        }
+        else if(house === "") {
+            alert('Please Select Your House');
         }
         else if(pass == "") {
             alert("Please Fill Password Field");
@@ -86,13 +92,32 @@ window.onload = function(){
             alert("Passwords Don't Match, Please Try Again.")
             return false
         }
-        else{
-            alert("Account Created! :)");
+        else {
+            const registerObj = {
+                username,
+                email,
+                password: sha256(pass),
+                house
+            };
+            $.ajax({
+                url: '/api/register.php',
+                method: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(registerObj),
+                success: () => {
+                    window.location = '/home.php';
+                },
+                error: (xhr) => {
+                    if (xhr.status === 403) {
+                        alert('That username is already taken');
+                    }
+                }
+            });
             return true;
         }
         // alert(pass);
         // alert(pass_2);
-    }
+    });
 
 }
 

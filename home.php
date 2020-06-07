@@ -43,7 +43,12 @@ session_start(); ?>
 <!-- Navbar-->
 <nav class="navbar navbar-expand-lg fixed-top py-3">
     <div class="container">
-        <a class="navbar-brand text-uppercase font-weight-bold" href="#">Welcome</a>
+        <a class="navbar-brand text-uppercase font-weight-bold" href="#">
+            Welcome,
+            <?php
+                echo $_SESSION["username"];
+            ?>
+        </a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <i class="fa fa-bars"><</i>
