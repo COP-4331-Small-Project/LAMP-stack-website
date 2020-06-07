@@ -16,6 +16,9 @@ $(() => {
             success: () => {
                 // Forward user to the contacts page
                 window.location = '/contacts.html';
+            },
+            error: (xhr) => {
+                console.log(xhr.status);
             }
         })
     })
