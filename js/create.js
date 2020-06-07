@@ -15,7 +15,7 @@ $(() => {
             contentType: 'application/json',
             data: JSON.stringify(objectifyForm($("#createForm").serializeArray())),
             success: () => {
-                window.location = '/home.php';
+                window.location = '/home.html';
             }
         });
     });

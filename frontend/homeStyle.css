@@ -55,14 +55,36 @@
     font-size: 0.9rem !important;
 }
 
+body.gryffindor{
+    background-image: linear-gradient(rgba(0, 0, 25, 0.5), rgba(255, 100, 0, 0.5)),
+    url('/Hogwarts-Castle-HD-Images.jpg');
+}
+
+body.slytherin{
+    background-image: linear-gradient(rgba(0, 25, 0, 0.5), rgba(0, 130, 17, 0.5)),
+    url('/Hogwarts-Castle-HD-Images.jpg');
+}
+
+
+body.ravenclaw{
+    background-image: linear-gradient(rgba(0, 0, 25, 0.5), rgba(4, 93, 181, 0.5)),
+    url('/Hogwarts-Castle-HD-Images.jpg');
+}
+
+
+
+body.hufflepuff{
+    background-image: linear-gradient(rgba(25, 0, 25, 0.5), rgba(230, 203, 0, 0.5)),
+    url('/Hogwarts-Castle-HD-Images.jpg');
+}
+
 
 html, body {
-    background-image: linear-gradient(rgba(0, 0, 25, 0.5), rgba(255, 100, 0, 0.5)),
-    url('https://www.pixelstalk.net/wp-content/uploads/2016/07/Hogwarts-Castle-HD-Images.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('/Hogwarts-Castle-HD-Images.jpg');
     background-size: auto;
     background-repeat: no-repeat;
     height: 100%;
     font-family: 'Numans', sans-serif;
 }
 
- html{ background-image: linear-gradient(rgba(255, 100, 0, 0.5), rgba(0, 0, 25, 0.5)),url('https://www.pixelstalk.net/wp-content/uploads/2016/07/Hogwarts-Castle-HD-Images.jpg');}
