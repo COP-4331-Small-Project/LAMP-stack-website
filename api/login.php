@@ -30,6 +30,7 @@ if (!empty($_POST)) {
 
         $userObj['username'] = $row['username'];
         $userObj['email'] = $row['email'];
+        $userObj['house'] = $row["house"];
         echo json_encode($userObj);
     } else {
         // Login failed. Determine error case
@@ -44,8 +45,13 @@ if (!empty($_POST)) {
 } else {
     // Otherwise, the user is checking if they are logged in
     if ($_SESSION['valid'] === true) {
-        $userObj['username'] = $_SESSION['username'];
+        $username = $_SESSION['username'];
+        $userObj['username'] = $username;
         $userObj['email'] = $_SESSION['email'];
+
+        $res = $mysql->query("SELECT * FROM `Users` WHERE username = '$username';");
+        $row = $res->fetch_assoc();
+        $userObj['house'] = $row["house"];
         echo json_encode($userObj);
     } else {
         http_response_code(401);
