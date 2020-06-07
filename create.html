@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!DOCTYPE html lang="en">
 
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -11,19 +9,18 @@
     <script src="/libs/sha256.min.js"></script>
     <script src="/libs/jquery-3.5.1.min.js"></script>
     <script src="/libs/bootstrap/js/bootstrap.min.js"></script>
-    <script src="/js/main.js"></script>
+    <script src="/js/create.js"></script>
     <title>Add a New Contact</title>
 </head>
 
 <body>
-<div class="container">
-    <div class="d-flex justify-content-center h-100">
-        <div class="card-adduser">
-            <div class="card-header">
-                <h3>Create New Contact</h3>
-            </div>
+<div class="wrapper">
+    <div class="container-fluid">
+        <div class="page-header">
+            <h2>Create Contact</h2>
+        </div>
         <p>Please fill this form and submit to add contact record to the database.</p>
-        <form action="api/contacts/create.php" method="get">
+        <form id="createForm">
             <div class="form-control">
                 <label for="firstName"> <b>First Name</b></label>
                 <input type="text" placeholder="Enter First Name" name="firstName" id="firstName" required>
@@ -50,7 +47,7 @@
             <div class="select">
                 <label>House</label>
                 <label>
-                    <select> id="houseInput" class="form-control">
+                    <select id="houseInput" name="house" class="form-control">
                         <option value="gryffindor">Gryffindor</option>
                         <option value="slytherin">Slytherin</option>
                         <option value="ravenclaw">Ravenclaw</option>
@@ -64,8 +61,10 @@
                 <p>By creating an account you agree to our <a href="api/contacts/create.php">Terms & Privacy</a>.</p>
                 <button type="submit" class="register-btn">Add User</button>
             </div>
-        </div>
+        </form>
+
     </div>
+
 </div>
 
 </body>

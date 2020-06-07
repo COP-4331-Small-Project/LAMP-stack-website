@@ -19,14 +19,14 @@ $email = $mysql->real_escape_string($inData["email"]);
 $phoneNumber = $mysql->real_escape_string($inData["phoneNumber"]);
 $house = $mysql->real_escape_string($inData["house"]);
 
-if (!$firstName || !$lastName || !$email || !$phoneNumber) {
+if (!$firstName || !$lastName || !$email || !$phoneNumber || !house) {
     http_response_code(400);
     echo 'missing contact details';
     exit;
 }
 
 $sql = "insert into Contacts (userId,firstName,lastName,phoneNumber,email,house)"
-. "VALUES ($userId, $firstName, $lastName, $phoneNumber, $email, $house)";
+. "VALUES ('$userId', '$firstName', '$lastName', '$phoneNumber', '$email', '$house')";
 echo "$sql\n";
 if($result = $mysql->query($sql) !== TRUE )
 {
