@@ -24,7 +24,8 @@ if (!$firstName || !$lastName || !$email || !$phoneNumber) {
     exit;
 }
 
-$sql = "insert into Contacts (userId,firstName,lastName,phoneNumber,email) VALUES ('$userId', '$firstName', '$lastName', '$phoneNumber', '$email')";
+$sql = "insert into Contacts (userId,firstName,lastName,phoneNumber,email,house)"
+. "VALUES ('$userId', '$firstName', '$lastName', '$phoneNumber', '$email', '$house')";
 echo "$sql\n";
 if($result = $mysql->query($sql) !== TRUE )
 {
