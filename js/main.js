@@ -15,7 +15,7 @@ $(() => {
             data: JSON.stringify(loginData),
             success: () => {
                 // Forward user to the contacts page
-                window.location = '/home.php';
+                window.location = '/home.html';
             },
             error: (xhr) => {
                 console.log(xhr.status);
