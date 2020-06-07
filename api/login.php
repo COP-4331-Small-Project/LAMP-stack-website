@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 
 include 'connect_to_db.php';
@@ -18,13 +19,20 @@ if (!empty($_POST)) {
     $password = empty($_POST['password']) ? null : $_POST['password'];
 
     // Grab user's password hash
-    $res = $mysql->query("SELECT password FROM `Users` WHERE username = '$username';");
+    $res = $mysql->query("SELECT * FROM Users WHERE username = '$username';");
     // Check password against db entry
     if (($row = $res->fetch_assoc()) && hash('sha256', $password) === $row['password']) {
-        // Set session to valid
+        // Set session to valid. Store username and user ID
         $_SESSION['valid'] = true;
         $_SESSION['username'] = $username;
-        echo 'Logged in';
+        $_SESSION['email'] = $row['email'];
+        $_SESSION['userId'] = $row["id"];
+
+        $userObj['username'] = $row['username'];
+        $userObj['email'] = $row['email'];
+        $userObj['house'] = $row["house"];
+        header('Content-Type: application/json');
+        echo json_encode($userObj);
     } else {
         // Login failed. Determine error case
         if ($username === null || $password === null) {
@@ -38,7 +46,15 @@ if (!empty($_POST)) {
 } else {
     // Otherwise, the user is checking if they are logged in
     if ($_SESSION['valid'] === true) {
-        echo 'Logged in';
+        $username = $_SESSION['username'];
+        $userObj['username'] = $username;
+        $userObj['email'] = $_SESSION['email'];
+
+        $res = $mysql->query("SELECT * FROM `Users` WHERE username = '$username';");
+        $row = $res->fetch_assoc();
+        $userObj['house'] = $row["house"];
+        header('Content-Type: application/json');
+        echo json_encode($userObj);
     } else {
         http_response_code(401);
         echo 'invalid session';
