@@ -33,7 +33,7 @@
     <!-- Navbar-->
     <nav class="navbar navbar-expand-lg">
         <div class="container">
-            <h2 id="welcomeText" class="navbar-brand text-uppercase font-weight-bold" href="#">
+            <h2 id="welcomeText" class="navbar-brand text-uppercase font-weight-bold">
                 Welcome,
             </h2>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -52,10 +52,136 @@
     <div class="wrapper">
         <div class="container-fluid">
             <div class="row">
+
                 <div class="col-md-12">
                     <div class="page-header clearfix">
-                        <h2 style="color:#FAFAFA" class="pull-left">My Contacts</h2>
-                        <a href="/create.html" class="btn btn-success pull-right">Add New Contact</a>
+
+                        <h2 style="color:#FAFAFA" class="pull-left">My Contacts <label
+                                for="searchText"></label><input type="text" id="searchText" placeholder="Search for Contact" height="50" /></h2>
+
+                        <a href="#" data-toggle="modal" data-target="#createbannerformodal" class="btn btn-success pull-right">Add New Contact</a>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="createbannerformodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLongTitle">Create A Contact</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="card-body">
+                                            <form id="createContactForm">
+                                                <div class="input-group form-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                                    </div>
+                                                    <label for="firstNameInput"></label><input id = "firstNameInput" type="text" class="form-control" placeholder="First Name">
+
+                                                </div>
+                                                <div class="input-group form-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                                    </div>
+                                                    <label for="lastNameInput"></label><input id = "lastNameInput" type="text" class="form-control" placeholder="Last Name">
+                                                </div>
+                                                <div class="input-group form-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                                    </div>
+                                                    <label for="phoneInput"></label><input id = "phoneInput" type="tel" class="form-control" placeholder="Phone Number">
+                                                </div>
+                                                <div class="input-group form-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                                    </div>
+                                                    <label for="emailInput"></label><input id = "emailInput" type="email" class="form-control" placeholder="Email">
+                                                </div>
+                                                <div class="input-group form-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text"><i class="fas fa-home"></i></span>
+                                                    </div>
+                                                    <label for="houseInput"></label><select id="houseInput" class="form-control">
+                                                        <option value="gryffindor">Gryffindor</option>
+                                                        <option value="slytherin">Slytherin</option>
+                                                        <option value="ravenclaw">Ravenclaw</option>
+                                                        <option value="hufflepuff">Hufflepuff</option>
+                                                    </select>
+                                                </div>
+
+                                            </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Create Contact</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+</div>
+                        <div class="modal fade" id="editbannerformodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLongTitle">Edit A Contact</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="card-body">
+                                            <form id="createContactForm">
+                                                <div class="input-group form-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                                    </div>
+                                                    <label for="firstNameInput"></label><input id = "firstNameInput" type="text" class="form-control" placeholder="First Name">
+
+                                                </div>
+                                                <div class="input-group form-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                                    </div>
+                                                    <label for="lastNameInput"></label><input id = "lastNameInput" type="text" class="form-control" placeholder="Last Name">
+                                                </div>
+                                                <div class="input-group form-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                                    </div>
+                                                    <label for="phoneInput"></label><input id = "phoneInput" type="tel" class="form-control" placeholder="Phone Number">
+                                                </div>
+                                                <div class="input-group form-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                                    </div>
+                                                    <label for="emailInput"></label><input id = "emailInput" type="email" class="form-control" placeholder="Email">
+                                                </div>
+                                                <div class="input-group form-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text"><i class="fas fa-home"></i></span>
+                                                    </div>
+                                                    <label for="houseInput"></label><select id="houseInput" class="form-control">
+                                                    <option value="gryffindor">Gryffindor</option>
+                                                    <option value="slytherin">Slytherin</option>
+                                                    <option value="ravenclaw">Ravenclaw</option>
+                                                    <option value="hufflepuff">Hufflepuff</option>
+                                                </select>
+                                                </div>
+
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary">Edit Contact</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                     </div>
                     <table id="contacts" class='table table-striped table-dark'>
                         <thead>
@@ -65,7 +191,8 @@
                                 <th>Phone Number</th>
                                 <th>Email</th>
                                 <th>House</th>
-                                <th>Action</th>
+                                <th>Date Created</th>
+                                <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody></tbody>
@@ -74,6 +201,7 @@
             </div>
         </div>
     </div>
-
+    </div>
+</body>
 </html>
 

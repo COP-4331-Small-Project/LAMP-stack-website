@@ -23,9 +23,9 @@ $(() => {
     				<th>${contact.phoneNumber}</th>
     				<th>${contact.email}</th>
     				<th>${contact.house}</th>
-    				<th>
-    					...
-					</th>
+    				<th>${contact.dateCreated}</th>
+    				<th><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editbannerformodal">Edit</button></th>
+    				<th><button type="button" class="btn btn-primary">Delete</button></th>
     			</tr>
 			`);
     	});
