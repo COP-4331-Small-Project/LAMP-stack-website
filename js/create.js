@@ -13,7 +13,7 @@ $(() => {
             url: '/api/contacts/create.php',
             method: 'POST',
             contentType: 'application/json',
-            data: JSON.stringify(objectifyForm($("#createForm").serializeArray())),
+            data: JSON.stringify(objectifyForm($("createContactForm").serializeArray())),
             success: () => {
                 window.location = '/home.html';
             }
