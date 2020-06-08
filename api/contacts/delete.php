@@ -2,7 +2,7 @@
 
 session_start();
 
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+if(!$_SESSION["valid"]) {
     header("Location: ../index.html");
     exit;
 }
@@ -12,6 +12,7 @@ include_once '../connect_to_db.php';
 $inData = getRequestInfo();
 
 $id = $mysql->real_escape_string($inData["id"]);
+$userId = $_SESSION["userId"];
 
 if (!$id) {
     http_response_code(400);
@@ -19,7 +20,7 @@ if (!$id) {
     exit;
 }
 
-$sql = "DELETE FROM Contacts WHERE id = $id AND userId";
+$sql = "DELETE FROM Contacts WHERE id='$id' AND userId='$userId';";
 
 if ($result = $mysql->query($sql) !== TRUE)
 {
