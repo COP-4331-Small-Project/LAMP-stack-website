@@ -69,25 +69,40 @@
 body.gryffindor{
     background-image: linear-gradient(rgba(0, 0, 25, 0.5), rgba(255, 100, 0, 0.5)),
     url('/Hogwarts-Castle-HD-Images.jpg');
+    background-size: auto;
+    background-repeat: no-repeat;
+    height: fit-content;
 }
 
 
 body.slytherin{
     background-image: linear-gradient(rgba(0, 25, 0, 0.5), rgba(0, 130, 17, 0.5)),
     url('/Hogwarts-Castle-HD-Images.jpg');
+    background-size: auto;
+    background-repeat: no-repeat;
+    height: fit-content;
 }
 
 
 body.ravenclaw{
     background-image: linear-gradient(rgba(0, 0, 25, 0.5), rgba(4, 93, 181, 0.5)),
     url('/Hogwarts-Castle-HD-Images.jpg');
+    background-size: auto;
+    background-repeat: no-repeat;
+    height: fit-content;
 }
 
 
-body.hufflepuff{
-    background-image: linear-gradient(rgba(25, 0, 25, 0.5), rgba(230, 203, 0, 0.5)),
+body.hufflepuff {
+    background-image: linear-gradient(rgba(25, 0, 25, 0.5),rgba(230, 203, 0, 0.5)),
     url('/Hogwarts-Castle-HD-Images.jpg');
+    background-size: auto;
+    background-repeat: no-repeat;
+    height: fit-content;
+
 }
+
+
 
 
 html, body {
@@ -95,7 +110,7 @@ html, body {
     url('/Hogwarts-Castle-HD-Images.jpg');
     background-size: auto;
     background-repeat: no-repeat;
-    height: auto;
+    height: 100%;
     font-family: 'Numans', sans-serif;
 }
 
