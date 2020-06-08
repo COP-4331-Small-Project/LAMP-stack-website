@@ -5,6 +5,7 @@
 
 .navbar .nav-link {
     color: #fff;
+
 }
 
 .navbar .nav-link:hover,
@@ -15,6 +16,7 @@
 
 .navbar .navbar-brand {
     color: #fff;
+
 }
 
 
@@ -47,9 +49,18 @@
 
     .navbar .navbar-brand, .navbar .nav-link {
         color: #5a5a5a;
+
     }
 }
 
+.center {
+    display: block;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.2;
+
+}
 
 .text-small {
     font-size: 0.9rem !important;
@@ -59,6 +70,7 @@ body.gryffindor{
     background-image: linear-gradient(rgba(0, 0, 25, 0.5), rgba(255, 100, 0, 0.5)),
     url('/Hogwarts-Castle-HD-Images.jpg');
 }
+
 
 body.slytherin{
     background-image: linear-gradient(rgba(0, 25, 0, 0.5), rgba(0, 130, 17, 0.5)),
@@ -72,7 +84,6 @@ body.ravenclaw{
 }
 
 
-
 body.hufflepuff{
     background-image: linear-gradient(rgba(25, 0, 25, 0.5), rgba(230, 203, 0, 0.5)),
     url('/Hogwarts-Castle-HD-Images.jpg');
@@ -84,7 +95,7 @@ html, body {
     url('/Hogwarts-Castle-HD-Images.jpg');
     background-size: auto;
     background-repeat: no-repeat;
-    height: 100%;
+    height: auto;
     font-family: 'Numans', sans-serif;
 }
 
