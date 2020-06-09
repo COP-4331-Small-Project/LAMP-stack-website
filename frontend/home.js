@@ -12,14 +12,8 @@ $(() => {
     	}
     });
 
-
-
-
-
     // Sets the table with the given contacts
     function setTable(contacts) {
-
-
     	const table = $('#contacts tbody').empty();
     	contacts.forEach((contact) => {
     		table.append(`
@@ -66,4 +60,22 @@ $(() => {
 			tid = undefined;
 		}, 500);
 	});
+
+	$('#editbannerformodal').on('show.bs.modal', () => {
+		const id = window.localStorage.getItem('id');
+		$.ajax({
+			url: '/api/contacts/contact.php',
+			method: 'POST',
+			contentType: 'application/json',
+			data: JSON.stringify({ id }),
+			success: (contact) => {
+				const { email, firstName, lastName, phoneNumber, house} = contact;
+				$('#e-email').val(email);
+				$('#e-firstName').val(firstName);
+				$('#e-lastName').val(lastName);
+				$('#e-phoneNumber').val(phoneNumber);
+				$('#e-houseInput').val(house);
+			}
+		});
+	})
 });
