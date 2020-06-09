@@ -25,7 +25,7 @@ $(() => {
     				<th>${contact.house}</th>
     				<th>${contact.dateCreated}</th>
     				<th><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editbannerformodal">Edit</button></th>
-    				<th><button type="button" class="btn btn-primary" onclick="deleteContact(${contact.userId})">Delete</button></th>
+    				<th><button type="button" class="btn btn-primary" onclick="deleteContact(${contact.id})">Delete</button></th>
     			</tr>
 			`);
     	});
