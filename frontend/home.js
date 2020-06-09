@@ -12,8 +12,14 @@ $(() => {
     	}
     });
 
+
+
+
+
     // Sets the table with the given contacts
     function setTable(contacts) {
+
+
     	const table = $('#contacts tbody').empty();
     	contacts.forEach((contact) => {
     		table.append(`
@@ -24,7 +30,7 @@ $(() => {
     				<th>${contact.email}</th>
     				<th>${contact.house}</th>
     				<th>${contact.dateCreated}</th>
-    				<th><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editbannerformodal">Edit</button></th>
+    				<th><button type="button" class="btn btn-primary" onclick="setID(${contact.id})" data-toggle="modal" data-target="#editbannerformodal">Edit</button></th>
     				<th><button type="button" class="btn btn-primary" onclick="deleteContact(${contact.id})">Delete</button></th>
     			</tr>
 			`);
