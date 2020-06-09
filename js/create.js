@@ -8,12 +8,12 @@ $(() => {
         return returnArray;
     }
 	$('#createForm').submit(function(e) {
-        e.preventDefault();
+	    e.preventDefault();
         $.ajax({
             url: '/api/contacts/create.php',
             method: 'POST',
             contentType: 'application/json',
-            data: JSON.stringify(objectifyForm($("createContactForm").serializeArray())),
+            data: JSON.stringify(objectifyForm($("#createForm").serializeArray())),
             success: () => {
                 window.location = '/home.html';
             }

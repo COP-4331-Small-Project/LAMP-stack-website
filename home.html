@@ -15,6 +15,9 @@
     <script src="/frontend/home.js"></script>
     <script src="/js/search.js"></script>
     <script src="/js/delete.js"></script>
+    <script src="/js/create.js"></script>
+    <script src="/js/edit.js"></script>
+
 
     <link rel="stylesheet" href="/js/search.js">
 
@@ -77,49 +80,50 @@
                                     </div>
                                     <div class="modal-body">
                                         <div class="card-body">
-                                            <form id="createContactForm">
-                                                <div class="input-group form-group">
-                                                    <div class="input-group-prepend">
-                                                        <span class="input-group-text"><i class="fas fa-user"></i></span>
-                                                    </div>
-                                                    <label for="firstNameInput"></label><input id = "firstNameInput" type="text" class="form-control" placeholder="First Name">
-
+                                            <form id="createForm">
+                                                <div class="form-control">
+                                                    <label for="firstName"> <b>First Name</b></label>
+                                                    <input type="text" placeholder="Enter First Name" name="firstName" id="firstName" required>
+                                                    <span class="help-block"></span>
                                                 </div>
-                                                <div class="input-group form-group">
-                                                    <div class="input-group-prepend">
-                                                        <span class="input-group-text"><i class="fas fa-user"></i></span>
-                                                    </div>
-                                                    <label for="lastNameInput"></label><input id = "lastNameInput" type="text" class="form-control" placeholder="Last Name">
-                                                </div>
-                                                <div class="input-group form-group">
-                                                    <div class="input-group-prepend">
-                                                        <span class="input-group-text"><i class="fas fa-user"></i></span>
-                                                    </div>
-                                                    <label for="phoneInput"></label><input id = "phoneInput" type="tel" class="form-control" placeholder="Phone Number">
-                                                </div>
-                                                <div class="input-group form-group">
-                                                    <div class="input-group-prepend">
-                                                        <span class="input-group-text"><i class="fas fa-user"></i></span>
-                                                    </div>
-                                                    <label for="emailInput"></label><input id = "emailInput" type="email" class="form-control" placeholder="Email">
-                                                </div>
-                                                <div class="input-group form-group">
-                                                    <div class="input-group-prepend">
-                                                        <span class="input-group-text"><i class="fas fa-home"></i></span>
-                                                    </div>
-                                                    <label for="houseInput"></label><select id="houseInput" class="form-control">
-                                                        <option value="gryffindor">Gryffindor</option>
-                                                        <option value="slytherin">Slytherin</option>
-                                                        <option value="ravenclaw">Ravenclaw</option>
-                                                        <option value="hufflepuff">Hufflepuff</option>
-                                                    </select>
+                                                <div class="form-control">
+                                                    <label>Last Name</label>
+                                                    <input type="text" placeholder="Enter Surname" name="lastName" id="lastName" required>
+                                                    <span class="help-block"></span>
                                                 </div>
 
+                                                <div class="form-control">
+                                                    <label>Email</label>
+                                                    <input type="text" placeholder="Enter Email Address" name="email" id="email" required>
+                                                    <span class="help-block"></span>
+                                                </div>
+
+                                                <div class="form-control">
+                                                    <label>Phone</label>
+                                                    <input type="text" placeholder="Enter Phone Number" name="phoneNumber" id="phoneNumber" required>
+                                                    <span class="help-block"></span>
+                                                </div>
+
+                                                <div class="select">
+                                                    <label>House</label>
+                                                    <label>
+                                                        <select id="houseInput" name="house" class="form-control">
+                                                            <option value="gryffindor">Gryffindor</option>
+                                                            <option value="slytherin">Slytherin</option>
+                                                            <option value="ravenclaw">Ravenclaw</option>
+                                                            <option value="hufflepuff">Hufflepuff</option>
+                                                        </select>
+                                                    </label>
+                                                    <span class="help-block"></span>
+                                                </div>
+
+                                                <div>
+                                                    <button type="submit" class="register-btn">Add User</button>
+                                                </div>
                                             </form>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                        <button type="button" onclick="" class="btn btn-primary">Create Contact</button>
+
                                     </div>
                                 </div>
                             </div>
@@ -139,49 +143,47 @@
                                     </div>
                                     <div class="modal-body">
                                         <div class="card-body">
-                                            <form id="createContactForm">
-                                                <div class="input-group form-group">
-                                                    <div class="input-group-prepend">
-                                                        <span class="input-group-text"><i class="fas fa-user"></i></span>
-                                                    </div>
-                                                    <label for="firstNameInput"></label><input id = "firstNameInput" type="text" class="form-control" placeholder="First Name">
-
+                                            <form id="editForm">
+                                                <div class="form-control">
+                                                    <label for="firstName"> <b>First Name</b></label>
+                                                    <input type="text" placeholder="Enter First Name" name="firstName" id="firstName" required>
+                                                    <span class="help-block"></span>
                                                 </div>
-                                                <div class="input-group form-group">
-                                                    <div class="input-group-prepend">
-                                                        <span class="input-group-text"><i class="fas fa-user"></i></span>
-                                                    </div>
-                                                    <label for="lastNameInput"></label><input id = "lastNameInput" type="text" class="form-control" placeholder="Last Name">
-                                                </div>
-                                                <div class="input-group form-group">
-                                                    <div class="input-group-prepend">
-                                                        <span class="input-group-text"><i class="fas fa-user"></i></span>
-                                                    </div>
-                                                    <label for="phoneInput"></label><input id = "phoneInput" type="tel" class="form-control" placeholder="Phone Number">
-                                                </div>
-                                                <div class="input-group form-group">
-                                                    <div class="input-group-prepend">
-                                                        <span class="input-group-text"><i class="fas fa-user"></i></span>
-                                                    </div>
-                                                    <label for="emailInput"></label><input id = "emailInput" type="email" class="form-control" placeholder="Email">
-                                                </div>
-                                                <div class="input-group form-group">
-                                                    <div class="input-group-prepend">
-                                                        <span class="input-group-text"><i class="fas fa-home"></i></span>
-                                                    </div>
-                                                    <label for="houseInput"></label><select id="houseInput" class="form-control">
-                                                    <option value="gryffindor">Gryffindor</option>
-                                                    <option value="slytherin">Slytherin</option>
-                                                    <option value="ravenclaw">Ravenclaw</option>
-                                                    <option value="hufflepuff">Hufflepuff</option>
-                                                </select>
+                                                <div class="form-control">
+                                                    <label>Last Name</label>
+                                                    <input type="text" placeholder="Enter Surname" name="lastName" id="lastName" required>
+                                                    <span class="help-block"></span>
                                                 </div>
 
+                                                <div class="form-control">
+                                                    <label>Email</label>
+                                                    <input type="text" placeholder="Enter Email Address" name="email" id="email" required>
+                                                    <span class="help-block"></span>
+                                                </div>
+
+                                                <div class="form-control">
+                                                    <label>Phone</label>
+                                                    <input type="text" placeholder="Enter Phone Number" name="phoneNumber" id="phoneNumber" required>
+                                                    <span class="help-block"></span>
+                                                </div>
+
+                                                <div class="select">
+                                                    <label>House</label>
+                                                    <label>
+                                                        <select id="houseInput" name="house" class="form-control">
+                                                            <option value="gryffindor">Gryffindor</option>
+                                                            <option value="slytherin">Slytherin</option>
+                                                            <option value="ravenclaw">Ravenclaw</option>
+                                                            <option value="hufflepuff">Hufflepuff</option>
+                                                        </select>
+                                                    </label>
+                                                    <span class="help-block"></span>
+                                                </div>
+
+                                                <div>
+                                                    <button type="submit" onclick="editContact()" class="register-btn">Update User</button>
+                                                </div>
                                             </form>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary">Edit Contact</button>
                                         </div>
                                     </div>
                                 </div>

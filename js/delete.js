@@ -16,3 +16,9 @@ function deleteContact(idToDelete)
         }
     })
 }
+
+function setID(id)
+{
+    window.localStorage.setItem("id", id);
+    console.log(id);
+}
