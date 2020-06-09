@@ -41,4 +41,23 @@ $(() => {
 
     	}
     });
+
+	let tid;
+	$("#searchText").on("keyup", function() {
+		if (tid) {
+			clearTimeout(tid);
+		}
+		tid = setTimeout(() => {
+			const value = $(this).val().toLowerCase();
+			$.ajax({
+				url: '/api/contacts/search.php',
+				method: 'GET',
+				data: { search: value },
+				success: (contacts) => {
+					setTable(contacts);
+				},
+			});
+			tid = undefined;
+		}, 500);
+	});
 });
