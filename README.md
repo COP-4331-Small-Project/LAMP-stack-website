@@ -1,6 +1,6 @@
 # MyHogwarts - Contact Manager
 
-This is a LAMP stack web application that can perform account creatation and CRUD operations as a Harry Potter themed contact manager!
+This is a LAMP stack web application that can perform account creation and CRUD operations as a Harry Potter themed contact manager!
 
 ## Setup(done in PHPStorm)
 Note: `<project directory` is the PhpStorm project directory. This is located in `<user dir>/PhpStorm Projects/<project name>`.
