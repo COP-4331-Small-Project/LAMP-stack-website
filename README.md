@@ -1,7 +1,8 @@
 # MyHogwarts - Contact Manager
-This web application is for the COP4331 class's small project. This is group 15.
 
-## Setup
+This is a LAMP stack web application that can perform account creatation and CRUD operations as a Harry Potter themed contact manager!
+
+## Setup(done in PHPStorm)
 Note: `<project directory` is the PhpStorm project directory. This is located in `<user dir>/PhpStorm Projects/<project name>`.
 1. Install [PhpStorm](https://www.jetbrains.com/phpstorm/) for your operating system. You can apply for an education license to get it for free.
     1. Once installed, open it an import the project from GitHub.
